@@ -1,0 +1,18 @@
+{
+  "name": "druglord",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "cli-table3": "^0.6.5",
+    "console-table-printer": "^2.12.1",
+    "readline-sync": "^1.4.10"
+  }
+}
