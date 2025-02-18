@@ -62,8 +62,8 @@ export default function makePlayerDashboard() {
             Stück2: player.extraInventory[3].amount,
         },
         {
-            Eigenschaft: "Max. Belastung",
-            Wert: player.Belastungsgrenze,
+            Eigenschaft: "Schulden",
+            Wert: formatter.format(player.Schulden),
             Droge: "Ecstasy",
             KG: player.drugInventory[4].amount,
             Median: formatter.format(player.drugInventory[4].median),
@@ -73,8 +73,8 @@ export default function makePlayerDashboard() {
             Stück2: player.extraInventory[4].amount,
         },
         {
-            Eigenschaft: "Akt. Belastung",
-            Wert: player.AktuelleBelastung,
+            Eigenschaft: "Max. Belastung",
+            Wert: player.Belastungsgrenze,
             Droge: "Marihuana",
             KG: player.drugInventory[5].amount,
             Median: formatter.format(player.drugInventory[5].median),
@@ -84,8 +84,8 @@ export default function makePlayerDashboard() {
             Stück2: player.extraInventory[5].amount,
         },
         {
-            Eigenschaft: "Angriff",
-            Wert: player.Angriffskraft,
+            Eigenschaft: "Akt. Belastung",
+            Wert: player.AktuelleBelastung,
             Droge: "Hasch",
             KG: player.drugInventory[6].amount,
             Median: formatter.format(player.drugInventory[6].median),
@@ -93,18 +93,22 @@ export default function makePlayerDashboard() {
             Stück2: player.extraInventory[6].amount,
         },
         {
-            Eigenschaft: "Verteidigung",
-            Wert: player.Verteidigung,
+            Eigenschaft: "Angriff",
+            Wert: player.Angriffskraft,
             Droge: "LSD",
             KG: player.drugInventory[7].amount,
             Median: formatter.format(player.drugInventory[7].median),
         },
         {   
-            Eigenschaft: "Speed",
-            Wert: player.speed,
+            Eigenschaft: "Verteidigung",
+            Wert: player.Verteidigung,
             Droge: "Crack",
             KG: player.drugInventory[8].amount,
             Median: formatter.format(player.drugInventory[8].median),
+        },
+        {
+            Eigenschaft: "Speed",
+            Wert: player.speed,
         },
     ]);
     return playerDashboard.printTable();

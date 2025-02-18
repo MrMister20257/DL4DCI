@@ -1,11 +1,12 @@
 export default class Player {
-    constructor(Name = "", Tag = 1, maxDays = 0, Stadt = "Hamburg", Gesundheit = 100, Cash = 100000, Kontostand = 0, Belastungsgrenze = 40, AktuelleBelastung = 0, Angriffskraft = 0, Verteidigung = 0, speed = 0, drugInventory = [], gunInventory = [], coverInventory = [], extraInventory = []) {
+    constructor(Name = "", Tag = 1, maxDays = 0, Stadt = "Hamburg", Gesundheit = 100, Cash = 100000, Kontostand = 0, Schulden = 100000, Belastungsgrenze = 40, AktuelleBelastung = 0, Angriffskraft = 0, Verteidigung = 0, speed = 0) {
         this.Name = Name;
         this.Stadt = Stadt;
         this.Tag = Tag;
         this.maxDays = maxDays;
         this.Cash = Cash;
         this.Kontostand = Kontostand;
+        this.Schulden = Schulden;
         this.Belastungsgrenze = Belastungsgrenze;
         this.AktuelleBelastung = AktuelleBelastung;
         this.Gesundheit = Gesundheit;

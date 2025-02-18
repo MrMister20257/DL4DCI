@@ -3,7 +3,7 @@ import chalk from "chalk";
 import makeUiHome from "../../../ui/uiHome.js";
 import player from "../../../../index.js";
 import sellDrug from "../buyAndSell/sellDrug.js";
-import drugArray from "../../../../classes/drugClasses.js";
+import { drugArray }  from "../../../ui/components/drugMarketDashboard.js";
 
 const drugAnswer = ["Kokain", "Heroin", "Speed", "Crystal Meth", "Ecstasy", "Marihuana", "Hasch", "LSD", "Crack"];
 

@@ -25,7 +25,7 @@ export default function sellDrug(index, playerInventory, itemPrice, itemName) {
 
         let total = units * itemPrice;
 
-        player.Cash += parseFloat(total);
+        player.Cash = Math.round((player.Cash + total) * 100) / 100;
         player.drugInventory[index].amount -= units;
         
         if (player.drugInventory[index].amount === 0) {

@@ -3,20 +3,27 @@ class Drug {
         this.name = name;
         this.price = price;
     }
-};
+}
 
-const kokain = new Drug("Kokain", 35200);
-const heroin = new Drug("Heroin", 29282);
-const speed = new Drug("Speed", 2270);
-const meth = new Drug("Crystal Meth", 26607);
-const ecstasy = new Drug("Ecstasy", 1950);
-const marihuana = new Drug("Marihuana", 3936);
-const hasch = new Drug("Hasch", 2775);
-const lsd = new Drug("LSD", 3250);
-const crack = new Drug("Crack", 4200);
+const drugList = [
+    new Drug("Kokain", 35200),
+    new Drug("Heroin", 29282),
+    new Drug("Speed", 2270),
+    new Drug("Crystal Meth", 26607),
+    new Drug("Ecstasy", 1950),
+    new Drug("Marihuana", 3936),
+    new Drug("Hasch", 2775),
+    new Drug("LSD", 3250),
+    new Drug("Crack", 4200)
+];
 
+const createDrugArray = () => drugList.map(drug => new Drug(drug.name, drug.price));
 
-const drugArray = [];
-drugArray.push(kokain, heroin, speed, meth, ecstasy, marihuana, hasch, lsd, crack);
+const drugArrayHamburg = createDrugArray();
+const drugArrayBerlin = createDrugArray();
+const drugArrayFrankfurt = createDrugArray();
+const drugArrayMuenchen = createDrugArray();
+const drugArrayKoeln = createDrugArray();
+const drugArrayLeipzig = createDrugArray();
 
-export default drugArray;
+export { drugArrayHamburg, drugArrayBerlin, drugArrayFrankfurt, drugArrayMuenchen, drugArrayKoeln, drugArrayLeipzig };

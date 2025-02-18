@@ -27,21 +27,21 @@ export default function buyItem(index, playerCash, itemPrice, itemName, shopAnsw
             continue;
         } else {
             if (shopAnswer === "Waffen") {
-                player.Cash -= parseFloat(totalCost);
+                player.Cash = Math.round((player.Cash - totalCost) * 100) / 100;
                 player.gunInventory[index].amount += units;
                 player.updateFirepower();
                 makeUiHome();
                 console.log(chalk.green(`Du hast erfolgreich ${units}x ${itemName} gekauft!`))
                 break;
             } else if (shopAnswer === "Schutzkleidung") {
-                player.Cash -= parseFloat(totalCost);
+                player.Cash = Math.round((player.Cash - totalCost) * 100) / 100;
                 player.coverInventory[index].amount += units;
                 player.updateDefense();
                 makeUiHome();
                 console.log(chalk.green(`Du hast erfolgreich ${units}x ${itemName} gekauft!`))
                 break;
             } else if (shopAnswer === "Extras") {
-                player.Cash -= parseFloat(totalCost);
+                player.Cash = Math.round((player.Cash - totalCost) * 100) / 100;
                 player.extraInventory[index].amount += units;
                 player.updateCapacity();
                 player.updateSpeed();

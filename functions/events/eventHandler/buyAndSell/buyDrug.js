@@ -37,7 +37,8 @@ export default function buyDrug(index, playerCash, playerCarry, playerMaxCarry, 
             continue;
         } 
         else {
-            player.Cash -= parseFloat(totalCost);
+            let total = parseFloat(totalCost);
+            player.Cash = Math.round((player.Cash - total) * 100) / 100;
             player.drugInventory[index].cost.push(itemPrice);
             player.drugInventory[index].amount += units;
             player.updateCarrys();
