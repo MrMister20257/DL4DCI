@@ -6,7 +6,7 @@ export default function createEnemy() {
     for (let i = 0; i <= numOfEnemys; i++) {
         let indexOfNpcArray = Math.floor(Math.random() * (29 - 0 + 1) + 0);
         let temp = npcArray[indexOfNpcArray];
-        enemys.push(temp);
+        enemy.push(temp);
     };
 
     return enemy;
