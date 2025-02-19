@@ -10,9 +10,10 @@ export default function changeCityAnimation() {
         console.clear();
         let spaces = " ".repeat(i);
         console.log(spaces + "     ______");
-        console.log(spaces + "    /|_||_\\'__\\");
+        console.log(spaces + "    /|_||_\\'__");
         console.log(spaces + "   (   _    _ _\\");
         console.log(spaces + "   ='-(_)--(_)-'");
         sleep(30);
     }
+    console.clear();
 }

@@ -69,7 +69,7 @@ export default function gameBuyItemNav() {
         } else if (extrasAnswer[index] === "S-Klasse") {
             buyItem(6, player.Cash, extraArray[6].price, extraArray[6].name, "Extras");
         } else if (index === -1) {
-            makeUi();
+            makeUiHome();
         }
     } else if (index = -1) {
         makeUiHome();

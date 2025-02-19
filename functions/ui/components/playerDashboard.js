@@ -93,18 +93,22 @@ export default function makePlayerDashboard() {
             Stück2: player.extraInventory[6].amount,
         },
         {
-            Eigenschaft: "Angriff",
-            Wert: player.Angriffskraft,
+            Eigenschaft: "Gesundheit",
+            Wert: player.Gesundheit,
             Droge: "LSD",
             KG: player.drugInventory[7].amount,
             Median: formatter.format(player.drugInventory[7].median),
         },
         {   
-            Eigenschaft: "Verteidigung",
-            Wert: player.Verteidigung,
+            Eigenschaft: "Angriff",
+            Wert: player.Angriffskraft,
             Droge: "Crack",
             KG: player.drugInventory[8].amount,
             Median: formatter.format(player.drugInventory[8].median),
+        },
+        {
+            Eigenschaft: "Verteidigung",
+            Wert: player.Verteidigung,
         },
         {
             Eigenschaft: "Speed",

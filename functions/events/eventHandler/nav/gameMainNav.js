@@ -7,9 +7,10 @@ import gameSellDrugsNav from "./gameSellDrugsNav.js";
 import gameBuyItemNav from "./gameBuyItemNav.js";
 import changeCity from "../changeCity/changeCity.js";
 import depositAndWithdrawl from "../bank/depositAndWithdrawl.js";
+import hospital from "../hospital/hospital.js";
 
 
-const navAnswer = ["Drogenmarkt", "Shop", "Stadt wechseln", "Bank"];
+const navAnswer = ["Drogenmarkt", "Shop", "Stadt wechseln", "Bank", "Krankenhaus"];
 const drugInfo = ["Kaufen", "Verkaufen"];
 
 
@@ -43,5 +44,9 @@ export default function gameMainNav() {
 
     if (navAnswer[index] === "Bank") {
         depositAndWithdrawl();
+    }
+
+    if (navAnswer[index] === "Krankenhaus") {
+        hospital();
     }
 }
