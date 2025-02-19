@@ -27,7 +27,8 @@ export default function gameOver() {
       ████████▀    ███    █▀    ▀█   ███   █▀    ██████████       ▀██████▀   ▀██████▀    ██████████   ███    ███ 
                                                                                                       ███    ███ 
     
-                                    Dein Gesamtvermögen betrug: ${formatter.format(player.Kontostand + player.Cash)}
+                                    Dein Gesamtvermögen betrug: ${formatter.format(player.Kontostand + player.Cash - player.Schulden)}
+                                    Erwirtschaftet in ${player.Tag} Tagen
                     
                     
                     

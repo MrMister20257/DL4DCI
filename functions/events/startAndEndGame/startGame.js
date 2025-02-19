@@ -13,9 +13,11 @@ ${chalk.yellowBright(`Bist du bereit, ${player.Name}? `)}`)) {
         makeUiHome();
         while (player.Tag < player.maxDays) {
             gameMainNav();
-        }
-        if (player.Tag >= player.maxDays || player.Gesundheit <= 0) {
-            gameOver();    
+            
+            if (player.Tag >= player.maxDays || player.Gesundheit <= 0) {
+                gameOver();
+                break; 
+            }
         }
     } else {
         return console.log(chalk.red(`${player.Name} du bist ein elendiger Feigling!`))
