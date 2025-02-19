@@ -18,28 +18,32 @@ const drugInfo = ["Kaufen", "Verkaufen"];
 const cities = ["Hamburg", "Berlin", "Frankfurt", "Muenchen", "Koeln", "Leipzig"];
 let firstTime = true;
 
+
 export default function gameMainNav() {
 
     if (firstTime) {
         firstTime = false;
 
-        console.log(chalk.magentaBright(`Willkommen im Sumpf des Verbrechens!
+        console.log(chalk.magentaBright(`Willkommen im Sumpf des Verbrechens, ${player.Name}!
             
-Drogenmarkt: Hier kaufst und verkaufst du deine Ware! Jede Stadt hat ihre individuellen Preise.
+Einsteiger Tutorial:
+${chalk.yellow("Drogenmarkt:")} Hier kaufst und verkaufst du deine Ware! Jede Stadt hat ihre individuellen Preise.
             
-Shop: Hier kannst du Waffen, Schutzkleidung und Extras kaufen. Sehr hilfreich um sich selbstzuverteidigen oder größere Ladungen transportieren zu können.
+${chalk.yellow("Shop:")} Hier kannst du Waffen, Schutzkleidung und Extras kaufen. Sehr hilfreich um sich selbstzuverteidigen oder größere Ladungen transportieren zu können.
             
-Stadtwechsel: Hier kannst du in andere Städte fahren. Sobald man eine andere Stadt betritt, beginnt ein neuer Tag. Cops liegen auf der Lauer!
+${chalk.yellow("Stadt wechseln:")} Hier kannst du in andere Städte fahren. Sobald man eine andere Stadt betritt, beginnt ein neuer Tag. Cops liegen auf der Lauer!
             
-Bank: Hier kannst du dein Bargeld auf ein mit 0,5% verzinstes Tagesgeldkonto einzahlen, deinen mit 1% verzinsten Kredit zurückzahlen oder einen neuen Kredit bis zu einer Maximalsumme von 100.000,00 € aufnehmen.
+${chalk.yellow("Bank:")} Hier kannst du dein Bargeld auf ein mit 0,5% verzinstes Tagesgeldkonto einzahlen, deinen mit 1% verzinsten Kredit zurückzahlen oder einen neuen Kredit bis zu einer Maximalsumme von 100.000,00 € aufnehmen.
             
-Krankenhaus: Hier kannst du deine Gesundheit wiederherstellen. Survival of the fittest!`))
+${chalk.yellow("Krankenhaus:")} Hier kannst du deine Gesundheit wiederherstellen. Survival of the fittest!
 
-        let index = rs.keyInSelect(navAnswer, chalk.yellowBright(`Was willst du machen, ${player.Name}? `));
+Prinzip verstanden? Dann drücke die Taste 0, um den Bildschirm erneut zu laden. Diese Nachricht wird nur beim ersten Besuch angezeigt!`))
+
+        let index = rs.keyInSelect(navAnswer, chalk.yellowBright(`Was willst du machen, ${player.Name}? `) , {cancel: "Refresh"});
 
         if (navAnswer[index] === "Drogenmarkt") {
             makeUiHome();
-            let index = rs.keyInSelect(drugInfo, chalk.yellowBright(`Was moechtest du tun, ${player.Name}? `));
+            let index = rs.keyInSelect(drugInfo, chalk.yellowBright(`Was moechtest du tun, ${player.Name}? `), {cancel: "Zurueck"} );
             if (drugInfo[index] === "Kaufen") {
                 gameBuyDrugsNav();
             } else if (drugInfo[index] === "Verkaufen") {
@@ -69,7 +73,7 @@ Krankenhaus: Hier kannst du deine Gesundheit wiederherstellen. Survival of the f
 
         if (navAnswer[index] === "Spiel beenden") {
             makeUiHome();
-            let index = rs.keyInSelect(["Ja, ich moechte das Spiel beenden!"], chalk.red("Moechtest du das Spiel wirklich beenden? "));
+            let index = rs.keyInSelect(["Ja, ich moechte das Spiel beenden!"], chalk.red("Moechtest du das Spiel wirklich beenden? "), {cancel: "Zurueck"});
     
             if (index === 0) {
                 console.clear();
@@ -83,11 +87,11 @@ Krankenhaus: Hier kannst du deine Gesundheit wiederherstellen. Survival of the f
         }
     }
 
-    let index = rs.keyInSelect(navAnswer, chalk.yellowBright(`Was willst du machen, ${player.Name}? `));
+    let index = rs.keyInSelect(navAnswer, chalk.yellowBright(`Was willst du machen, ${player.Name}? `), {cancel: "Refresh"});
 
     if (navAnswer[index] === "Drogenmarkt") {
         makeUiHome();
-        let index = rs.keyInSelect(drugInfo, chalk.yellowBright(`Was moechtest du tun, ${player.Name}? `));
+        let index = rs.keyInSelect(drugInfo, chalk.yellowBright(`Was moechtest du tun, ${player.Name}? `), {cancel: "Zurueck"});
         if (drugInfo[index] === "Kaufen") {
             gameBuyDrugsNav();
         } else if (drugInfo[index] === "Verkaufen") {
@@ -117,7 +121,7 @@ Krankenhaus: Hier kannst du deine Gesundheit wiederherstellen. Survival of the f
 
     if (navAnswer[index] === "Spiel beenden") {
         makeUiHome();
-        let index = rs.keyInSelect(["Ja, ich moechte das Spiel beenden!"], chalk.red("Moechtest du das Spiel wirklich beenden? "));
+        let index = rs.keyInSelect(["Ja, ich moechte das Spiel beenden!"], chalk.red("Moechtest du das Spiel wirklich beenden? "), {cancel: "Zurueck"});
 
         if (index === 0) {
             console.clear();

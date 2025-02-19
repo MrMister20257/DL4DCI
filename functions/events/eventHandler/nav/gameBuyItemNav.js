@@ -16,11 +16,11 @@ const shopAnswer = ["Waffen", "Schutzkleidung", "Extras"];
 
 export default function gameBuyItemNav() {
     makeUiShop();
-    let index = rs.keyInSelect(shopAnswer, chalk.yellowBright(`Was moechtest du kaufen, ${player.Name}? `));
+    let index = rs.keyInSelect(shopAnswer, chalk.yellowBright(`Was moechtest du kaufen, ${player.Name}? `), {cancel: "Zurueck"});
 
     if (shopAnswer[index] === "Waffen") {
         makeUiShop();
-        let index = rs.keyInSelect(waffenAnswer, chalk.yellowBright(`Welche Waffe willst du kaufen, ${player.Name}? `));
+        let index = rs.keyInSelect(waffenAnswer, chalk.yellowBright(`Welche Waffe willst du kaufen, ${player.Name}? `), {cancel: "Zurueck"});
     
         if (waffenAnswer[index] === "Baseballschlaeger") {
             buyItem(0, player.Cash, gunArray[0].price, gunArray[0].name, "Waffen");
@@ -39,7 +39,7 @@ export default function gameBuyItemNav() {
         }
     } else if (shopAnswer[index] === "Schutzkleidung") {
         makeUiShop();
-        let index = rs.keyInSelect(schutzAnswer, chalk.yellowBright(`Welche Schutzkleidung willst du kaufen, ${player.Name}? `));
+        let index = rs.keyInSelect(schutzAnswer, chalk.yellowBright(`Welche Schutzkleidung willst du kaufen, ${player.Name}? `), {cancel: "Zurueck"});
     
         if (schutzAnswer[index] === "Stichschutzweste") {
             buyItem(0, player.Cash, coverArray[0].price, coverArray[0].name, "Schutzkleidung");
@@ -52,7 +52,7 @@ export default function gameBuyItemNav() {
         }
     } else if (shopAnswer[index] === "Extras") {
         makeUiShop();
-        let index = rs.keyInSelect(extrasAnswer, chalk.yellowBright(`Welches Extra willst du kaufen, ${player.Name}? `));
+        let index = rs.keyInSelect(extrasAnswer, chalk.yellowBright(`Welches Extra willst du kaufen, ${player.Name}? `), {cancel: "Zurueck"});
     
         if (extrasAnswer[index] === "Bauchtasche") {
             buyItem(0, player.Cash, extraArray[0].price, extraArray[0].name, "Extras");

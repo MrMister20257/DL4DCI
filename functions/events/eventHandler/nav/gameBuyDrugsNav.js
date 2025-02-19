@@ -9,7 +9,7 @@ const drugAnswer = ["Kokain", "Heroin", "Speed", "Crystal Meth", "Ecstasy", "Mar
 
 export default function gameBuyDrugsNav() {
     makeUiHome();
-    let index = rs.keyInSelect(drugAnswer, chalk.yellowBright(`Was moechtest du kaufen, ${player.Name}? `));
+    let index = rs.keyInSelect(drugAnswer, chalk.yellowBright(`Was moechtest du kaufen, ${player.Name}? `), {cancel: "Zurueck"});
 
     if (drugAnswer[index] === "Kokain") {
         buyDrug(0, player.Cash, player.AktuelleBelastung, player.Belastungsgrenze, drugArray[0].price, drugArray[0].name);

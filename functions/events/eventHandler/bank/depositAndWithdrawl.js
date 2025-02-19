@@ -9,7 +9,7 @@ const bankAnswer =["Einzahlen", "Abheben", "Schulden tilgen", "Geld leihen"];
 export default function depositAndWithdrawl() {
     makeUiHome();
     while(true) {
-        let index = rs.keyInSelect(bankAnswer, `Was moechtest du tun, ${player.Name}? `);
+        let index = rs.keyInSelect(bankAnswer, `Was moechtest du tun, ${player.Name}? `, {cancel: "Zurueck"});
         
         if(bankAnswer[index] === "Einzahlen") {
             if (player.Cash !== 0) {

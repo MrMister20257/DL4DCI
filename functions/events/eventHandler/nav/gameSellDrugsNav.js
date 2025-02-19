@@ -9,7 +9,7 @@ const drugAnswer = ["Kokain", "Heroin", "Speed", "Crystal Meth", "Ecstasy", "Mar
 
 export default function gameSellDrugsNav() {
     makeUiHome();
-    let index = rs.keyInSelect(drugAnswer, chalk.yellowBright(`Was moechtest du verkaufen, ${player.Name}? `));
+    let index = rs.keyInSelect(drugAnswer, chalk.yellowBright(`Was moechtest du verkaufen, ${player.Name}? `), {cancel: "Zurueck"});
     
     if (drugAnswer[index] === "Kokain") {
         sellDrug(0, player.drugInventory[0], drugArray[0].price, drugArray[0].name);
