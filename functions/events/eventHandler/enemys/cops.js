@@ -104,6 +104,7 @@ export default function cops() {
                                         player.gunInventory.forEach(element => { element.amount = 0; });
                                         player.Tag += days;
                                         player.Gesundheit = 20;
+                                        player.median();
                                         player.updateDefense();
                                         player.updateFirepower();
                                         player.updateCarrys();
@@ -112,6 +113,7 @@ export default function cops() {
                                         escaped = true;
                                     }
                                 }
+
                             } else {
                                 let temp = Math.min(enemyAttack, player.Gesundheit);
                                 player.Gesundheit -= enemyAttack;
@@ -123,6 +125,7 @@ export default function cops() {
                                     player.gunInventory.forEach(element => { element.amount = 0; });
                                     player.Tag += days;
                                     player.Gesundheit = 20;
+                                    player.median();
                                     player.updateDefense();
                                     player.updateFirepower();
                                     player.updateCarrys();
@@ -137,6 +140,52 @@ export default function cops() {
                         remainingEnemies.push(enemy);
                         console.log(chalk.red(`Cop #${i + 1} hat mit ${enemy.health} Gesundheit und ${enemy.verteidigung} Verteidigung überlebt!`));
 
+                        if (enemyAttack > 0 && player.Verteidigung > 0) {
+                            let temp = Math.min(enemyAttack, player.Verteidigung);
+                            player.Verteidigung -= enemyAttack;
+                            enemyAttack -= temp;
+
+                            if (player.Verteidigung <= 0 && enemyAttack > 0) {
+                                let temp = Math.min(enemyAttack, player.Gesundheit);
+                                player.Gesundheit -= enemyAttack;
+                                enemyAttack -= temp;
+
+                                   if (player.Gesundheit <= 20) {
+                                    let days = Math.floor(Math.random() * 3) + 1;
+                                    player.drugInventory.forEach(element => { element.amount = 0; element.cost = []; });
+                                    player.gunInventory.forEach(element => { element.amount = 0; });
+                                    player.Tag += days;
+                                    player.Gesundheit = 20;
+                                    player.median();
+                                    player.updateDefense();
+                                    player.updateFirepower();
+                                    player.updateCarrys();
+                                    makeUiHome();
+                                    console.log(chalk.red(`Du wurdest angeschossen und bist bewusstlos zu Boden gesackt. Alle Drogen und Waffen wurden dir abgenommen. Du warst ${days} Tage im Gefängnis.`));
+                                    escaped = true;
+                                }
+                            }
+
+                        } else {
+                            let temp = Math.min(enemyAttack, player.Gesundheit);
+                            player.Gesundheit -= enemyAttack;
+                            enemyAttack -= temp;
+                            
+                            if (player.Gesundheit <= 20) {
+                                let days = Math.floor(Math.random() * 3) + 1;
+                                player.drugInventory.forEach(element => { element.amount = 0; element.cost = []; });
+                                player.gunInventory.forEach(element => { element.amount = 0; });
+                                player.Tag += days;
+                                player.Gesundheit = 20;
+                                player.median();
+                                player.updateDefense();
+                                player.updateFirepower();
+                                player.updateCarrys();
+                                makeUiHome();
+                                console.log(chalk.red(`Du wurdest angeschossen und bist bewusstlos zu Boden gesackt. Alle Drogen und Waffen wurden dir abgenommen. Du warst ${days} Tage im Gefängnis.`));
+                                escaped = true;
+                            }
+                        }
                     }    
 
                 } else if (playerAttack > 0 && enemy.verteidigung <= 0) {
@@ -167,6 +216,7 @@ export default function cops() {
                                     player.gunInventory.forEach(element => { element.amount = 0; });
                                     player.Tag += days;
                                     player.Gesundheit = 20;
+                                    player.median();
                                     player.updateDefense();
                                     player.updateFirepower();
                                     player.updateCarrys();
@@ -186,6 +236,7 @@ export default function cops() {
                                 player.gunInventory.forEach(element => { element.amount = 0; });
                                 player.Tag += days;
                                 player.Gesundheit = 20;
+                                player.median();
                                 player.updateDefense();
                                 player.updateFirepower();
                                 player.updateCarrys();
@@ -216,6 +267,7 @@ export default function cops() {
             player.drugInventory.forEach(element => { element.amount = 0; element.cost = []; });
             player.gunInventory.forEach(element => { element.amount = 0; });
             player.Tag += days;
+            player.median();
             player.updateDefense();
             player.updateFirepower();
             player.updateCarrys();
