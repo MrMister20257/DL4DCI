@@ -9,9 +9,10 @@ import changeCity from "../changeCity/changeCity.js";
 import depositAndWithdrawl from "../bank/depositAndWithdrawl.js";
 import hospital from "../hospital/hospital.js";
 import gameOver from "../../startAndEndGame/gameOver.js";
+import gluecksspiel from "../gluecksspiel/gluecksspiel.js";
 
 
-const navAnswer = ["Drogenmarkt", "Shop", "Stadt wechseln", "Bank", "Krankenhaus", "Spiel beenden"];
+const navAnswer = ["Drogenmarkt", "Shop", "Stadt wechseln", "Bank", "Krankenhaus", "Gluecksspiel", "Spiel beenden"];
 const drugInfo = ["Kaufen", "Verkaufen"];
 
 
@@ -36,6 +37,8 @@ ${chalk.yellow("Stadt wechseln:")} Hier kannst du in andere Städte fahren. Soba
 ${chalk.yellow("Bank:")} Hier kannst du dein Bargeld auf ein mit 0,5% verzinstes Tagesgeldkonto einzahlen, deinen mit 1% verzinsten Kredit zurückzahlen oder einen neuen Kredit bis zu einer Maximalsumme von 100.000,00 € aufnehmen.
             
 ${chalk.yellow("Krankenhaus:")} Hier kannst du deine Gesundheit wiederherstellen. Survival of the fittest!
+
+${chalk.yellow("Glücksspiel:")} Hier kannst du ein Würfelspiel spielen. Bei einer 7 gewinnst du. Good luck!
 
 Prinzip verstanden? Dann drücke die Taste 0, um den Bildschirm erneut zu laden. Diese Nachricht wird nur beim ersten Besuch angezeigt!`))
 
@@ -69,6 +72,10 @@ Prinzip verstanden? Dann drücke die Taste 0, um den Bildschirm erneut zu laden.
 
         if (navAnswer[index] === "Krankenhaus") {
             hospital();
+        }
+
+        if (navAnswer[index] === "Gluecksspiel") {
+            gluecksspiel();
         }
 
         if (navAnswer[index] === "Spiel beenden") {
@@ -117,6 +124,10 @@ Prinzip verstanden? Dann drücke die Taste 0, um den Bildschirm erneut zu laden.
 
     if (navAnswer[index] === "Krankenhaus") {
         hospital();
+    }
+
+    if (navAnswer[index] === "Gluecksspiel") {
+        gluecksspiel();
     }
 
     if (navAnswer[index] === "Spiel beenden") {
