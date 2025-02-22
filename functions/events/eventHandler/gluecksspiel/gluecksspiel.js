@@ -81,5 +81,8 @@ export default function gluecksspiel() {
                 break;
             }
         }
+    } 
+    if (index === -1) {
+        makeUiHome();
     }
 }
